@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "AWS-AI-Navigator",
+    "name": "AWS AI Navigator",
     "version": "1.0",
     "description": "AI-powered guide for navigating AWS services",
     "permissions": [
