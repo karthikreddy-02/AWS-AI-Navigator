@@ -5,7 +5,8 @@
   "description": "Navigate AWS Console with ease using OpenAI.",
   "permissions": ["scripting", "activeTab"],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
   },
   "background": {
     "service_worker": "background.js"
