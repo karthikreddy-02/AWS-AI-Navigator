@@ -1,28 +1,13 @@
 {
-    "manifest_version": 3,
-    "name": "AWS AI Navigator",
-    "version": "1.0",
-    "description": "AI-powered guide for navigating AWS services",
-    "permissions": [
-      "activeTab",
-      "storage",
-      "webNavigation"
-    ],
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "images/AWS.png",
-        "48": "images/AWS.png",
-        "128": "images/AWS.png"
-      }
-    },
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["https://console.aws.amazon.com/*"],
-        "js": ["content.js"]
-      }
-    ]
+  "manifest_version": 3,
+  "name": "AWS Navigator",
+  "version": "1.0",
+  "description": "Navigate AWS Console with ease using OpenAI.",
+  "permissions": ["scripting", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
   }
+}

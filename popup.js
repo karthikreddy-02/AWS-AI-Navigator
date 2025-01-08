@@ -1,22 +1,21 @@
-document.getElementById('getGuidance').addEventListener('click', async () => {
-    const guidanceDiv = document.getElementById('guidance');
-    guidanceDiv.textContent = 'Fetching AI guidance...';
-  
-    try {
-      // In a real implementation, you'd call your AI service here
-      const response = await fetch('https://your-ai-backend.com/aws-guidance', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          currentPage: window.location.href
-        })
-      });
-  
-      const guidance = await response.json();
-      guidanceDiv.textContent = guidance.text;
-    } catch (error) {
-      guidanceDiv.textContent = 'Error fetching guidance: ' + error.message;
-    }
+document.getElementById('submitQuery').addEventListener('click', async () => {
+  const userQuery = document.getElementById('userQuery').value;
+  const responseDiv = document.getElementById('response');
+
+  // Call OpenAI API
+  const response = await fetch('https://api.openai.com/v1/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer YOUR_OPENAI_API_KEY`
+    },
+    body: JSON.stringify({
+      model: "text-davinci-003",
+      prompt: `AWS task: ${userQuery}`,
+      max_tokens: 100
+    })
   });
+
+  const data = await response.json();
+  responseDiv.innerText = data.choices[0].text;
+});

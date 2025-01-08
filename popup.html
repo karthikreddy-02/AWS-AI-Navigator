@@ -1,24 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AWS AI Navigator</title>
-  <style>
-    body { 
-      width: 300px; 
-      padding: 10px; 
-      font-family: Arial, sans-serif; 
-    }
-    #guidance {
-      margin-top: 10px;
-      max-height: 200px;
-      overflow-y: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>AWS AI Navigator</h2>
-  <button id="getGuidance">Get AWS Guidance</button>
-  <div id="guidance"></div>
+  <h1>AWS Navigator</h1>
+  <input id="userQuery" type="text" placeholder="What do you want to do?">
+  <button id="submitQuery">Submit</button>
+  <div id="response"></div>
   <script src="popup.js"></script>
 </body>
 </html>
