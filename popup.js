@@ -1,3 +1,6 @@
+require('dotenv').config()
+const apiKey = process.env.OPENAI_API_KEY;
+
 document.getElementById('userQuery').addEventListener('input', async (event) => {
   const userQuery = event.target.value;
   const suggestionsList = document.getElementById('suggestions');
